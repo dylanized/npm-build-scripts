@@ -20,7 +20,7 @@
     "build:es6": "babel src/es6/1.js src/es6/2.js --presets=es2015 | uglifyjs -o tmp/es6.js -c -m",
     "watch:es6": "onchange 'src/es6/**' -- npm run build:es6",
     "ALL": "=================================================",
-    "build": "npm run build:scss && npm run build:es6",
+    "build": "npm-run-all clean build:css build:js build:scss build:es6",
     "watch": "onchange 'src/**' -- npm run build",
     "clean": "rm -f tmp/*.*"
   },
@@ -30,6 +30,7 @@
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "uglifycss": "0.0.25"
   },
   "devDependencies": {
