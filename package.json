@@ -17,8 +17,9 @@
     "watch:scss": "onchange 'src/scss/**' -- npm run build:css",
     "lint:scss": "sass-lint 'src/scss/**' --verbose --no-exit",
     "LESS": "================================================",
-    "build:less": "less-cli src/less && mv src/less/*.css tmp",
+    "build:less": "lessc src/less/app.less tmp/lessBundle.css --clean-css='--s1 --advanced --compatibility=ie8'",
     "watch:less": "onchange 'src/less/**' -- npm run build:less",
+    "lint:less": "lessc --lint src/less/*.less",
     "ES6": "=================================================",
     "build:es6": "babel src/es6/1.js src/es6/2.js --presets=es2015 | uglifyjs -o tmp/es6Bundle.js -c -m",
     "watch:es6": "onchange 'src/es6/**' -- npm run build:es6",
@@ -32,7 +33,8 @@
   "dependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
-    "less-cli": "^1.0.0",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
     "uglifycss": "0.0.25"
