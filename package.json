@@ -10,9 +10,9 @@
     "watch:scss": "onchange 'src/scss/**' -- npm run build:css",
     "ES6": "=================================================",
     "build:es6": "babel src/es6/1.js src/es6/2.js --presets=es2015 | uglifyjs -o tmp/bundle.js -c -m",
-    "watch:es6": "onchange 'src/es6/**' -- npm run build:js",
+    "watch:es6": "onchange 'src/es6/**' -- npm run build:es6",
     "ALL": "=================================================",
-    "build": "npm run build:css && npm run build:js",
+    "build": "npm run build:scss && npm run build:es6",
     "watch": "onchange 'src/**' -- npm run build",
     "clean": "rm -f tmp/*.*"
   },
