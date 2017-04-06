@@ -7,6 +7,7 @@
     "CSS": "=================================================",
     "build:css": "uglifycss src/css/reset.css src/css/simplegrid.css > tmp/bundle.css",
     "lint:css": "csslint src/css",
+    "watch:css": "onchange 'src/css/**' -- npm run build:css",
     "SCSS": "================================================",
     "lint:scss": "sass-lint 'src/scss/**' --verbose --no-exit",
     "build:scss": "node-sass --source-map true --output-style compressed src/scss/bootstrap.scss tmp/bootstrap.css",
