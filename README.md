@@ -1,2 +1,7 @@
-# npm-build-scripts
-Build system examples using NPM Scripts
+# NPM Compiled Build scripts
+
+### Todos
+
+- scss linting
+- build:js
+- typescript ?
