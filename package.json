@@ -8,12 +8,16 @@
     "build:css": "uglifycss src/css/reset.css src/css/simplegrid.css > tmp/bundle.css",
     "lint:css": "csslint src/css",
     "watch:css": "onchange 'src/css/**' -- npm run build:css",
+    "JS": "=================================================",
+    "build:js": "uglifyjs src/js/1.js src/js/2.js -o tmp/bundle.js -c -m --source-map tmp/bundle.js.map",
+    "watch:js": "onchange 'src/js/**' -- npm run build:js",
+    "lint:js": "eslint '.' --ext '.js, .json'  --ignore-pattern 'src/es6' --ignore-pattern 'tmp'",
     "SCSS": "================================================",
     "lint:scss": "sass-lint 'src/scss/**' --verbose --no-exit",
     "build:scss": "node-sass --source-map true --output-style compressed src/scss/bootstrap.scss tmp/bootstrap.css",
     "watch:scss": "onchange 'src/scss/**' -- npm run build:css",
     "ES6": "=================================================",
-    "build:es6": "babel src/es6/1.js src/es6/2.js --presets=es2015 | uglifyjs -o tmp/bundle.js -c -m",
+    "build:es6": "babel src/es6/1.js src/es6/2.js --presets=es2015 | uglifyjs -o tmp/es6.js -c -m",
     "watch:es6": "onchange 'src/es6/**' -- npm run build:es6",
     "ALL": "=================================================",
     "build": "npm run build:scss && npm run build:es6",
@@ -30,6 +34,10 @@
   },
   "devDependencies": {
     "csslint": "^1.0.5",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
     "onchange": "^3.2.1",
     "sass-lint": "^1.10.2"
   }
