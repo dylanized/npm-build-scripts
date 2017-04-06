@@ -4,6 +4,9 @@
   "description": "Build system examples using NPM Scripts",
   "main": "",
   "scripts": {
+    "CSS": "=================================================",
+    "build:css": "uglifycss src/css/reset.css src/css/simplegrid.css > tmp/bundle.css",
+    "lint:css": "csslint src/css",
     "SCSS": "================================================",
     "lint:scss": "sass-lint 'src/scss/**' --verbose --no-exit",
     "build:scss": "node-sass --source-map true --output-style compressed src/scss/bootstrap.scss tmp/bootstrap.css",
@@ -21,9 +24,11 @@
   "dependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
-    "node-sass": "^4.5.2"
+    "node-sass": "^4.5.2",
+    "uglifycss": "0.0.25"
   },
   "devDependencies": {
+    "csslint": "^1.0.5",
     "onchange": "^3.2.1",
     "sass-lint": "^1.10.2"
   }
